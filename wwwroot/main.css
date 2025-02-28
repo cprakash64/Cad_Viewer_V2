@@ -1,0 +1,137 @@
+/* Global Reset and Base Styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #333;
+  }
+  
+  /* Header Styles */
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo-container .logo {
+    height: 40px;
+  }
+  
+  .title {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+  }
+  
+  .upload-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .upload-container button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: #0078d4;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .upload-container button:hover {
+    background: #005a9e;
+  }
+  
+  .upload-container #uploaded-file-name {
+    margin-left: 10px;
+    font-weight: 500;
+  }
+  
+  /* Preview and Overlay Area */
+  #preview,
+  #overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px; /* below header */
+    bottom: 0;
+  }
+  
+  /* Overlay / Modal Styles */
+  #overlay {
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Initially hidden */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #overlay .notification {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+  }
+  
+  #overlay .notification p {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+  }
+  
+  #overlay .notification button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: #0078d4;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #overlay .notification button:hover {
+    background: #005a9e;
+  }
+
+  /* Drag and Drop Overlay Styles */
+#drop-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+  }
+  
+  #drop-overlay .drop-message {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    background: rgba(0, 120, 212, 0.7);
+    padding: 2rem 3rem;
+    border-radius: 8px;
+  }
+  
+  

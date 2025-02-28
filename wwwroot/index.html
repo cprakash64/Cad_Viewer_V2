@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/svg" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/style.css" />
+    <link rel="stylesheet" href="/main.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>CAD Viewer</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="logo-container">
+        <img class="logo" src="/assets/logo.png" alt="CAD Viewer logo" />
+
+      </div>
+      <!-- <h1 class="title">CAD Viewer</h1> -->
+      <div class="upload-container">
+        <button id="upload" title="Upload New Model">Upload</button>
+        <input type="file" id="input" hidden />
+        <span id="uploaded-file-name"></span>
+      </div>
+    </header>
+
+    <div id="preview"></div>
+    <div id="overlay">
+      <div class="notification">
+        <p>This is a notification message.</p>
+        <button id="close-notification">Close</button>
+      </div>
+    </div>
+
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/7.*/viewer3D.js"></script>
+    <script src="/main.js" type="module"></script>
+    <script>
+      document.getElementById('upload').addEventListener('click', () => {
+        document.getElementById('input').click();
+      });
+
+      document.getElementById('input').addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          document.getElementById('uploaded-file-name').textContent = file.name;
+        }
+      });
+
+      // Example notification close functionality
+      document.getElementById('close-notification')?.addEventListener('click', () => {
+        document.getElementById('overlay').style.display = 'none';
+      });
+    </script>
+  </body>
+</html>
